@@ -10,23 +10,17 @@ class Vector : public Tuple {
   Vector() : Tuple(0, 0, 0, 0.0) {}
   Vector(double x, double y, double z) : Tuple(x, y, z, 0.0) {}
 
-  double magnitude() const {
-    return sqrt(x()*x() + y()*y() + z()*z());
-  }
+  double magnitude() const { return sqrt(x() * x() + y() * y() + z() * z()); }
 
   Vector normalize() const {
     auto m = magnitude();
     return Vector(x() / m, y() / m, z() / m);
   }
 
-  double dot(const Vector& v) const {
-    return v.x() * x() + v.y() * y() + v.z() * z();
-  }
+  double dot(const Vector& v) const { return v.x() * x() + v.y() * y() + v.z() * z(); }
 
   Vector cross(const Vector& v) const {
-    return Vector(y() * v.z() - z() * v.y(),
-                  z() * v.x() - x() * v.z(),
-                  x() * v.y() - y() * v.x());
+    return Vector(y() * v.z() - z() * v.y(), z() * v.x() - x() * v.z(), x() * v.y() - y() * v.x());
   }
 };
 

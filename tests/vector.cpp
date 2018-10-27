@@ -32,11 +32,7 @@ TEST(VectorTest, DifferenceOfVectorsIsAVector) {
 }
 
 TEST(VectorTest, MagnitudeOfVectorIsSquareRootOfCoordinatesSquaresSum) {
-  std::vector<Vector> v = { Vector(1, 0, 0),
-                            Vector(0, 1, 0),
-                            Vector(0, 0, 1),
-                            Vector(1, 2, 3),
-                            Vector(-1, -2, -3) };
+  std::vector<Vector> v = {Vector(1, 0, 0), Vector(0, 1, 0), Vector(0, 0, 1), Vector(1, 2, 3), Vector(-1, -2, -3)};
   std::vector<double> mag = {1.0, 1.0, 1.0, sqrt(14), sqrt(14)};
 
   for (int i = 0; i < v.size(); ++i) {
@@ -62,11 +58,7 @@ TEST(VectorTest, NormalizedVectorHasCoordinatedDividedByMagnitude) {
 }
 
 TEST(VectorTest, NormalizedVectorHadMagnitudeEqualOne) {
-  std::vector<Vector> v = { Vector(1, 0, 0),
-                            Vector(0, 1, 0),
-                            Vector(0, 0, 1),
-                            Vector(1, 2, 3),
-                            Vector(-1, -2, -3) };
+  std::vector<Vector> v = {Vector(1, 0, 0), Vector(0, 1, 0), Vector(0, 0, 1), Vector(1, 2, 3), Vector(-1, -2, -3)};
 
   for (int i = 0; i < v.size(); ++i) {
     ASSERT_DOUBLE_EQ(v[i].normalize().magnitude(), 1.0);
